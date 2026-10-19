@@ -1,0 +1,32 @@
+@use '@/abstracts' as *;
+
+.header {
+    padding: 50px 0 0 0;
+
+    &__container {
+        display: flex;
+        align-items: baseline;
+        gap: 95px;
+
+
+        @include respond-to('small') {
+            gap: 10px;
+            justify-content: space-between;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        gap: 95px;
+
+        @include respond-to('small') {
+            gap: 30px;
+        }
+    }
+
+    &__link {
+        @include respond-to('small') {
+            font-size: 14px;
+        }
+    }
+}

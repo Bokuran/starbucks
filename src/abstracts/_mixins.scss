@@ -1,0 +1,43 @@
+@use 'sass:map';
+@use 'breakpoints' as*;
+@use 'variables' as*;
+
+
+@mixin respond-to($breakpoint) {
+    $value: map.get($breakpoints, $breakpoint);
+
+    @if $value {
+        @media (max-width: $value) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "К сожалению, брейкпоинт `#{$breakpoint}` не найден.";
+    }
+}
+
+@mixin text-decor-green {
+    background: linear-gradient(263.46deg, $color-green-dark 0, $color-green 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin flash-green {
+    content: '';
+    position: absolute;
+    z-index: -5;
+    width: 325px;
+    height: 325px;
+    border-radius: 100%;
+    background: linear-gradient(210deg, rgba($color-green-dark, 0.11) 0, rgba($color-green, 0.15) 10%);
+    filter: blur(50px);
+}
+
+@mixin green-circle {
+    content: '';
+    border-radius: 100%;
+    background: linear-gradient(245deg, $color-green-dark 20.73%, $color-green 82.6%);
+    box-shadow: 0 4px 41px 0 rgba(0, 0, 0, 0.39);
+}

@@ -1,0 +1,13 @@
+//base
+@use 'base/reset';
+
+//layout
+@use 'layout/footer';
+@use 'layout/header';
+@use 'layout/container';
+
+//components
+@use 'components/typography';
+
+//pages
+@use 'pages/home'

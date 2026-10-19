@@ -1,0 +1,120 @@
+@use '@/abstracts' as *;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    font-family: "Montserrat", sans-serif;
+    background-color: $color-dark;
+    color: $color-gray;
+    overflow-x: hidden;
+}
+
+h1,
+h2 {
+    font-weight: 800;
+}
+
+img {
+    max-width: 100%;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 37px;
+    @include text-decor-green;
+
+    @include respond-to('small') {
+        font-size: 22px;
+    }
+}
+
+.title {
+    font-size: 80px;
+    line-height: 1.09;
+    color: $color-white;
+
+    @include respond-to('small') {
+        font-size: 48px;
+    }
+
+    &::after {
+        @include flash-green;
+    }
+
+    span {
+        @include text-decor-green;
+    }
+}
+
+.btn {
+    color: $color-white;
+    font-size: 24px;
+    padding: 20px 80px;
+    border-radius: 83px;
+    background: linear-gradient(210deg, $color-green-dark 0, $color-green 100%);
+    transition: opacity .3s;
+
+    &:hover {
+        opacity: .8;
+    }
+
+    @include respond-to('small') {
+        padding: 15px 35px;
+    }
+}
+
+.link {
+    color: $color-gray;
+    font-size: 24px;
+    padding: 20px 55px;
+    border: 1px solid #dadada;
+    border-radius: 83px;
+    background: $color-dark;
+    transition: opacity .3s;
+
+    &:hover {
+        opacity: .8;
+    }
+
+    @include respond-to('small') {
+        padding: 15px 30px;
+    }
+}
+
+.text__row {
+    display: flex;
+    align-items: center;
+    gap: 72px;
+}
+
+.star__decor {
+    &::after {
+        content: "we\ahave";
+        position: absolute;
+        width: 186px;
+        height: 186px;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url(@/img/icons/star.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        font-size: 32px;
+        font-weight: 500;
+        text-transform: uppercase;
+        text-align: center;
+        color: $color-white;
+        white-space: pre-wrap;
+        transform: translate(-50%, -50%);
+    }
+}
